@@ -57,8 +57,7 @@
 ___
 **Ответ**
 
-<img width="1919" height="819" alt="image" src="https://github.com/user-attachments/assets/350906cd-0cc4-429f-be37-2fd2f3dea4f2" />
-
+<img width="1919" height="819" alt="image" src="https://github.com/user-attachments/assets/32a518ce-b4b1-4044-9784-c1c7795a663a" />
 
 ```
 
