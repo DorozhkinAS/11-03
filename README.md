@@ -116,61 +116,6 @@ sudo systemctl status logstash.service
 
 ![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-4.PNG)
 
-Установить и запустить Filebeat. Переключить поставку логов Nginx с Logstash на Filebeat.
-
-Приведите скриншот интерфейса kibana, на котором видны логи nginx, которые были отправлены через Filebeat.
-
-1. `Установка nginx.`
-....
- sudo apt install nginx
-....   
-3. `Установка logstash.`
-....
-sudo apt install ./logstash-8.12.2-amd64.deb 
-....
-4. `Создать файл конфигурации по адресу /etc/logstash/conf.d/logstash.conf.`
-5. `Далее настроить поставку access-лога nginx в elasticsearch:`
-
-   # Читаем файл
-input {
-  file {
-    path => ["/var/log/nginx/access.log"]
-    start_position => "beginning"
-  }
-}
-# Извлекаем данные из событий
-filter {
-  grok {
-    match => { "message" => "\[%{TIMESTAMP_ISO8601:timestamp}\]\[%{DATA:severity}%{SPACE}\]\[%{DATA:source}%{SPACE}\]%{SPACE}%{GREEDYDATA:message}" }
-    overwrite => [ "message" ]
-  }
-}
-# Сохраняем все в Elasticsearch
-output {
-  elasticsearch {
-    hosts => ["http://localhost:9200"]
-    index => "nginx-logs-%{+YYYY.MM}"
-  }
-}
-
-....
-
-6. `Запуск службы logstash.`
-
-sudo systemctl daemon-reload
-sudo systemctl enable logstash.service   
-sudo systemctl start logstash.service  
-sudo systemctl status logstash.service
-
-7. `Создать данные для просмотра в kibana.`
-8. `Маршрут: Management > stack management > kibana > data view > Create data view!`
-
-
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
-
-
 ```
 
 
