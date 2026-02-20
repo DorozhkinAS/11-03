@@ -57,11 +57,6 @@
 ___
 **Ответ**
 
-
-
-<img width="1919" height="819" alt="image" src="https://github.com/user-attachments/assets/32a518ce-b4b1-4044-9784-c1c7795a663a" />
-
-
 Установка nginx.  
 ```
 sudo apt install nginx
@@ -104,31 +99,24 @@ sudo systemctl start logstash.service
 sudo systemctl status logstash.service
 ```
 Создать данные для просмотра в kibana.  
-Маршрут: Management > stack management	> kibana > data view > Create data view!
 
-_______________________________
+Маршрут: Management > stack management	> kibana > data view > Create data view!
 
 <img width="1362" height="547" alt="image" src="https://github.com/user-attachments/assets/fbeaa4c0-440e-4f7a-a102-ac3795a08f81" />
 
 
-
 <img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/778a96c9-943b-4194-9b41-7000d58b6b0c" />
+
 
 <img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/07336819-6ba2-4461-8ba1-a76502229d7b" />
 
 
+<img width="1366" height="551" alt="image" src="https://github.com/user-attachments/assets/eed09f36-2f75-486a-a56c-47885638e82b" />
 
-четвертое
 
 <img width="1366" height="538" alt="image" src="https://github.com/user-attachments/assets/7601832e-75f6-4088-af9d-ad484840eef4" />
 
-
-_____________________________
-
-
-
 ```
-
 
 ### Задание 4. Filebeat
 
