@@ -107,7 +107,10 @@ sudo systemctl status logstash.service
 Маршрут: Management > stack management	> kibana > data view > Create data view!
 
 _______________________________
-первое
+
+<img width="1362" height="547" alt="image" src="https://github.com/user-attachments/assets/fbeaa4c0-440e-4f7a-a102-ac3795a08f81" />
+
+
 
 <img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/778a96c9-943b-4194-9b41-7000d58b6b0c" />
 
