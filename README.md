@@ -57,7 +57,119 @@
 ___
 **Ответ**
 
+
+
 <img width="1919" height="819" alt="image" src="https://github.com/user-attachments/assets/32a518ce-b4b1-4044-9784-c1c7795a663a" />
+
+
+Установка nginx.  
+```
+sudo apt install nginx
+```
+Установка logstash.  
+```
+sudo apt install ./logstash-8.12.2-amd64.deb 
+```
+Создать файл конфигурации по адресу /etc/logstash/conf.d/logstash.conf.
+
+Далее настроить поставку access-лога nginx в elasticsearch:  
+```
+# Читаем файл
+input {
+  file {
+    path => ["/var/log/nginx/access.log"]
+    start_position => "beginning"
+  }
+}
+# Извлекаем данные из событий
+filter {
+  grok {
+    match => { "message" => "\[%{TIMESTAMP_ISO8601:timestamp}\]\[%{DATA:severity}%{SPACE}\]\[%{DATA:source}%{SPACE}\]%{SPACE}%{GREEDYDATA:message}" }
+    overwrite => [ "message" ]
+  }
+}
+# Сохраняем все в Elasticsearch
+output {
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "nginx-logs-%{+YYYY.MM}"
+  }
+}
+```
+Запуск службы logstash.  
+```
+sudo systemctl daemon-reload  
+sudo systemctl enable logstash.service   
+sudo systemctl start logstash.service  
+sudo systemctl status logstash.service
+```
+Создать данные для просмотра в kibana.  
+Маршрут: Management > stack management	> kibana > data view > Create data view!
+
+![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-0.PNG)
+
+![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-1.PNG)
+
+![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-2.PNG)
+
+![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-3.PNG)
+
+![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-4.PNG)
+
+Установить и запустить Filebeat. Переключить поставку логов Nginx с Logstash на Filebeat.
+
+Приведите скриншот интерфейса kibana, на котором видны логи nginx, которые были отправлены через Filebeat.
+
+1. `Установка nginx.`
+....
+ sudo apt install nginx
+....   
+3. `Установка logstash.`
+....
+sudo apt install ./logstash-8.12.2-amd64.deb 
+....
+4. `Создать файл конфигурации по адресу /etc/logstash/conf.d/logstash.conf.`
+5. `Далее настроить поставку access-лога nginx в elasticsearch:`
+
+   # Читаем файл
+input {
+  file {
+    path => ["/var/log/nginx/access.log"]
+    start_position => "beginning"
+  }
+}
+# Извлекаем данные из событий
+filter {
+  grok {
+    match => { "message" => "\[%{TIMESTAMP_ISO8601:timestamp}\]\[%{DATA:severity}%{SPACE}\]\[%{DATA:source}%{SPACE}\]%{SPACE}%{GREEDYDATA:message}" }
+    overwrite => [ "message" ]
+  }
+}
+# Сохраняем все в Elasticsearch
+output {
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "nginx-logs-%{+YYYY.MM}"
+  }
+}
+
+....
+
+6. `Запуск службы logstash.`
+
+sudo systemctl daemon-reload
+sudo systemctl enable logstash.service   
+sudo systemctl start logstash.service  
+sudo systemctl status logstash.service
+
+7. `Создать данные для просмотра в kibana.`
+8. `Маршрут: Management > stack management > kibana > data view > Create data view!`
+
+
+
+`При необходимости прикрепитe сюда скриншоты
+![Название скриншота](ссылка на скриншот)`
+
 
 ```
 
