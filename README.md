@@ -111,7 +111,8 @@ _______________________________
 
 <img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/778a96c9-943b-4194-9b41-7000d58b6b0c" />
 
-<img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/ec007cc5-1ebb-4e32-8dc9-12852b8d7af2" />
+<img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/07336819-6ba2-4461-8ba1-a76502229d7b" />
+
 
 
 четвертое
