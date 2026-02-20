@@ -106,15 +106,20 @@ sudo systemctl status logstash.service
 Создать данные для просмотра в kibana.  
 Маршрут: Management > stack management	> kibana > data view > Create data view!
 
-![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-0.PNG)
+_______________________________
+первое
 
-![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-1.PNG)
+<img width="1366" height="547" alt="image" src="https://github.com/user-attachments/assets/778a96c9-943b-4194-9b41-7000d58b6b0c" />
 
-![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-2.PNG)
+третье
 
-![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-3.PNG)
+четвертое
 
-![](https://github.com/eskin-igor/netology_11-3/blob/main/11-3/11-3-3-4.PNG)
+пятое
+
+_____________________________
+
+
 
 ```
 
