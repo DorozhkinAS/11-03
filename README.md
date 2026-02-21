@@ -117,7 +117,15 @@ sudo systemctl status logstash.service
 <img width="1366" height="538" alt="image" src="https://github.com/user-attachments/assets/7601832e-75f6-4088-af9d-ad484840eef4" />
 
 
-```
+# Задание 4. Filebeat.
 
-### Задание 4. Filebeat
+Установить и запустить Filebeat. Переключить поставку логов Nginx с Logstash на Filebeat.
+
+Приведите скриншот интерфейса kibana, на котором видны логи nginx, которые были отправлены через Filebeat.
+___
+
+**Ответ**
+Установил Filebeat и посмотрел логи
+
+<img width="1919" height="912" alt="4" src="https://github.com/user-attachments/assets/7df3507a-d980-4091-a301-066ec1f00fff" />
 
